@@ -264,6 +264,7 @@ impl ClientBuilder {
                             HttpVersionPref::Http1 => {
                                 tls.request_alpns(&["http/1.1"]);
                             }
+                            #[cfg(feature = "http2")]
                             HttpVersionPref::Http2 => {
                                 tls.request_alpns(&["h2"]);
                             }
@@ -446,6 +447,7 @@ impl ClientBuilder {
                         HttpVersionPref::Http1 => {
                             tls.alpn_protocols = vec!["http/1.1".into()];
                         }
+                        #[cfg(feature = "http2")]
                         HttpVersionPref::Http2 => {
                             tls.alpn_protocols = vec!["h2".into()];
                         }
