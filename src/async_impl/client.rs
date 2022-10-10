@@ -486,7 +486,8 @@ impl ClientBuilder {
                 builder.http2_only(true);
             }
 
-            if let Some(http2_initial_stream_window_size) = config.http2_initial_stream_window_size {
+            if let Some(http2_initial_stream_window_size) = config.http2_initial_stream_window_size
+            {
                 builder.http2_initial_stream_window_size(http2_initial_stream_window_size);
             }
             if let Some(http2_initial_connection_window_size) =
